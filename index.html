@@ -212,7 +212,8 @@ section { padding: 96px 48px; }
 .step:hover { transform: translateY(-4px); border-color: rgba(232,160,32,0.3); }
 .step-num {
   font-family: 'Barlow Condensed', sans-serif; font-weight: 800;
-  font-size: 72px; line-height: 1; color: rgba(232,160,32,0.12);
+  font-size: 72px; line-height: 1; color: rgba(232,160,32,0.4);
+  -webkit-text-stroke: 1px rgba(232,160,32,0.6);
   position: absolute; top: 16px; right: 24px; pointer-events: none;
 }
 .step-icon {
@@ -416,10 +417,10 @@ footer p { font-size: 13px; color: rgba(255,255,255,0.3); }
 <section id="hero">
   <div class="stripe-bg"></div>
   <div class="hero-glow"></div>
-  <p class="hero-eyebrow">Now Serving Ventura County</p>
+  <p class="hero-eyebrow">Introducing A Fuel Delivery Service In Your Area</p>
   <img src="assets/fitzy-logo.png" alt="Fitzy Mobile Fueling" class="hero-logo"/>
   <h1 class="hero-title">We Bring <span>Fuel To You</span></h1>
-  <p class="hero-sub">Fitzy delivers fuel directly to your vehicle — at home, at the office, or on the job site. Reserve your spot and be first in line as we launch across the area.</p>
+  <p class="hero-sub">You're getting the first look at a new local business. Fitzy delivers fuel directly to your vehicle — at home, at the office, or on the job site. Reserve your spot and be first in line as we launch across the area.</p>
 
   <div class="signup-card" id="reserve">
     <h3>Reserve Your Spot</h3>
@@ -434,9 +435,14 @@ footer p { font-size: 13px; color: rgba(255,255,255,0.3); }
         <select class="pill-input full" name="vehicle">
           <option value="" disabled selected>Vehicle Type</option>
           <option>Car</option>
+          <option>Car (Exotic / Luxury)</option>
           <option>SUV</option>
-          <option>Van</option>
-          <option>Pickup</option>
+          <option>Truck / Pickup</option>
+          <option>Van / Minivan</option>
+          <option>Motorcycle</option>
+          <option>RV / Camper</option>
+          <option>Commercial Vehicle</option>
+          <option>Fleet (Multiple Vehicles)</option>
           <option>Other</option>
         </select>
         <button type="submit" class="submit-btn full">Reserve My Spot — It's Free</button>
@@ -474,14 +480,14 @@ footer p { font-size: 13px; color: rgba(255,255,255,0.3); }
       </div>
       <div class="benefit">
         <div class="benefit-tag">03 · Flexibility</div>
-        <h3>At home. At work. Wherever.</h3>
-        <p>Driveway, garage, office lot. Tuesday morning or Sunday night — pick a window that fits your week. You don't even have to be there when we show up.</p>
+        <h3>At Work, At Home, At Play</h3>
+        <p>Driveway, garage, office lot. Tuesday morning or Sunday night — pick a window that fits your week. No need to be there when we show up — just make sure the gas tank is accessible.</p>
         <div class="benefit-rule"></div>
       </div>
       <div class="benefit">
         <div class="benefit-tag">04 · Local</div>
         <h3>Locally owned &amp; operated</h3>
-        <p>Built right here in the 805 by neighbors — not a national chain. Licensed and insured, and accountable to the community we serve.</p>
+        <p>Built right here in the 805, Ventura County. We're licensed and insured, and accountable to the local communities we serve — whether it's one vehicle or a fleet.</p>
         <div class="benefit-rule"></div>
       </div>
     </div>
