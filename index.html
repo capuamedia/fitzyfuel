@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Fitzy Mobile Fueling — Coming Soon to Lake Sherwood</title>
+<title>Fitzy Mobile Fueling — Mobile Fuel Delivery in Ventura County</title>
 <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;1,700&display=swap" rel="stylesheet"/>
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -30,17 +30,6 @@ body {
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: var(--navy); }
 ::-webkit-scrollbar-thumb { background: var(--amber); border-radius: 3px; }
-
-/* ── Lake Sherwood welcome ribbon ── */
-.ls-ribbon {
-  position: fixed; top: 72px; left: 0; right: 0; z-index: 99;
-  background: var(--amber); color: var(--navy);
-  font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
-  font-size: 12px; letter-spacing: 3px; text-transform: uppercase;
-  text-align: center; padding: 7px 16px;
-  border-bottom: 1px solid rgba(10,24,40,0.15);
-}
-.ls-ribbon b { font-weight: 800; }
 
 /* ── Diagonal stripe utility ── */
 .stripe-bg {
@@ -80,7 +69,7 @@ nav img { height: 52px; width: auto; transition: height 0.2s; }
 #hero {
   min-height: 100vh;
   background: linear-gradient(170deg, #030810 0%, #071220 45%, #0D1F38 100%);
-  display: block; text-align: center; padding: 130px 24px 64px;
+  display: block; text-align: center; padding: 110px 24px 64px;
   position: relative; overflow: hidden;
 }
 #hero .stripe-bg {
@@ -240,6 +229,46 @@ section { padding: 96px 48px; }
 }
 .step p { font-size: 15px; color: rgba(255,255,255,0.55); line-height: 1.6; }
 
+/* ── Use cases ── */
+#usecases {
+  background: #F5F3EE; color: #2C2C2A;
+}
+#usecases .section-label { color: #B07410; }
+#usecases .section-title { color: #0A1828; }
+#usecases .section-sub { color: rgba(44,44,42,0.65); }
+.usecase-layout { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 56px; align-items: center; }
+.usecase-photo img {
+  width: 100%; height: 100%; max-height: 480px; object-fit: cover;
+  border-radius: 20px; display: block;
+  box-shadow: 0 20px 50px rgba(10,24,40,0.18);
+}
+.usecase-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.usecase-card {
+  background: #FFFFFF;
+  border: 1px solid rgba(10,24,40,0.08);
+  border-radius: 16px; padding: 26px 24px;
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+.usecase-card:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(10,24,40,0.08); border-color: rgba(232,160,32,0.4); }
+.usecase-icon {
+  width: 44px; height: 44px; border-radius: 12px;
+  background: linear-gradient(135deg, var(--amber2), var(--amber));
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 14px rgba(232,160,32,0.3);
+}
+.usecase-card h3 {
+  font-family: 'Barlow Condensed', sans-serif; font-weight: 800;
+  font-size: 19px; letter-spacing: 0.5px; text-transform: uppercase;
+  color: #0A1828; margin-bottom: 8px;
+}
+.usecase-card p { font-size: 14px; line-height: 1.6; color: #4A4A4A; }
+@media (max-width: 768px) {
+  .usecase-layout { grid-template-columns: 1fr; }
+  .usecase-grid { grid-template-columns: 1fr; }
+  #usecases { padding: 64px 24px; }
+}
+
 /* ── Service area ── */
 #area { background: #060E1A; }
 .area-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
@@ -383,24 +412,21 @@ footer p { font-size: 13px; color: rgba(255,255,255,0.3); }
   <a href="#reserve" class="nav-cta">Reserve Your Spot</a>
 </nav>
 
-<!-- LAKE SHERWOOD WELCOME RIBBON -->
-<div class="ls-ribbon">Hello, <b>Lake Sherwood</b> &nbsp;·&nbsp; You're getting the first look</div>
-
 <!-- HERO -->
 <section id="hero">
   <div class="stripe-bg"></div>
   <div class="hero-glow"></div>
-  <p class="hero-eyebrow">An Introduction for Lake Sherwood</p>
+  <p class="hero-eyebrow">Now Serving Ventura County</p>
   <img src="assets/fitzy-logo.png" alt="Fitzy Mobile Fueling" class="hero-logo"/>
   <h1 class="hero-title">We Bring <span>Fuel To You</span></h1>
-  <p class="hero-sub">If our flyer made it to your door, you're early. Fitzy delivers fuel directly to your vehicle — at home, in the driveway, or wherever you park. Reserve your spot before we open to the wider area.</p>
+  <p class="hero-sub">Fitzy delivers fuel directly to your vehicle — at home, at the office, or on the job site. Reserve your spot and be first in line as we launch across the area.</p>
 
   <div class="signup-card" id="reserve">
     <h3>Reserve Your Spot</h3>
     <p>Be first in line when we launch in your area. No commitment — just early access.</p>
     <div class="form-contents">
       <form class="form-grid" id="reserveForm" onsubmit="handleSubmit(event)">
-        <input type="hidden" name="ref" id="refField" value="lake-sherwood"/>
+        <input type="hidden" name="ref" id="refField" value="website"/>
         <input class="pill-input" type="text" name="name" placeholder="First &amp; Last Name" required/>
         <input class="pill-input" type="email" name="email" placeholder="Email Address" required/>
         <input class="pill-input" type="tel" name="phone" placeholder="Phone Number"/>
@@ -455,7 +481,7 @@ footer p { font-size: 13px; color: rgba(255,255,255,0.3); }
       <div class="benefit">
         <div class="benefit-tag">04 · Local</div>
         <h3>Locally owned &amp; operated</h3>
-        <p>Built right here in the 805 by neighbors — not a national chain. Licensed and insured, and accountable to the community we serve. Lake Sherwood is where we're starting on purpose.</p>
+        <p>Built right here in the 805 by neighbors — not a national chain. Licensed and insured, and accountable to the community we serve.</p>
         <div class="benefit-rule"></div>
       </div>
     </div>
@@ -513,12 +539,72 @@ footer p { font-size: 13px; color: rgba(255,255,255,0.3); }
   </div>
 </section>
 
-<!-- SERVICE AREA — hidden for Lake Sherwood early access launch; re-enable for general rollout -->
-<section id="area" style="display:none">
+<!-- USE CASES -->
+<section id="usecases">
+  <div class="inner">
+    <span class="section-label">Built For However You Move</span>
+    <h2 class="section-title">One Truck. Every Way You Need Fuel.</h2>
+    <p class="section-sub">From the driveway to the job site, Fitzy meets you where your vehicles already are.</p>
+    <div class="usecase-layout">
+      <div class="usecase-photo">
+        <img src="assets/fitzy-fuel-truck.jpg" alt="Fitzy Mobile Fueling truck, wrapped and ready for delivery"/>
+      </div>
+      <div class="usecase-grid">
+        <div class="usecase-card">
+          <div class="usecase-icon">
+            <svg width="20" height="20" fill="none" viewBox="0 0 22 22">
+              <path d="M4 11l7-7 7 7" stroke="#0A1828" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M6 9.5V18a1 1 0 001 1h3v-5.5h2V19h3a1 1 0 001-1V9.5" stroke="#0A1828" stroke-width="2" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3>At Home</h3>
+          <p>Wake up to a full tank. We fuel in your driveway or garage while you sleep, work, or run errands — no detours, no gas station lines.</p>
+        </div>
+        <div class="usecase-card">
+          <div class="usecase-icon">
+            <svg width="20" height="20" fill="none" viewBox="0 0 22 22">
+              <rect x="3" y="8" width="16" height="11" rx="2" stroke="#0A1828" stroke-width="2"/>
+              <path d="M8 8V6a2 2 0 012-2h2a2 2 0 012 2v2" stroke="#0A1828" stroke-width="2"/>
+              <line x1="3" y1="13" x2="19" y2="13" stroke="#0A1828" stroke-width="2"/>
+            </svg>
+          </div>
+          <h3>At Work</h3>
+          <p>Parked in the office lot all day? We top you off during business hours so you never have to plan a fuel stop around your commute.</p>
+        </div>
+        <div class="usecase-card">
+          <div class="usecase-icon">
+            <svg width="20" height="20" fill="none" viewBox="0 0 22 22">
+              <path d="M2 14h8l1.5-4.5h3l1.5 3.5V17H2v-3z" stroke="#0A1828" stroke-width="2" stroke-linejoin="round"/>
+              <circle cx="6" cy="18" r="1.6" fill="#0A1828"/>
+              <circle cx="14" cy="18" r="1.6" fill="#0A1828"/>
+              <path d="M6 9.5V6" stroke="#0A1828" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Commercial Fleets</h3>
+          <p>Delivery vans, service trucks, rideshare — keep your whole fleet fueled and on the road with scheduled or on-demand visits and consolidated billing.</p>
+        </div>
+        <div class="usecase-card">
+          <div class="usecase-icon">
+            <svg width="20" height="20" fill="none" viewBox="0 0 22 22">
+              <path d="M4 19v-6a7 7 0 0114 0v6" stroke="#0A1828" stroke-width="2" stroke-linecap="round"/>
+              <line x1="2" y1="19" x2="20" y2="19" stroke="#0A1828" stroke-width="2" stroke-linecap="round"/>
+              <line x1="11" y1="6" x2="11" y2="3" stroke="#0A1828" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Job Sites &amp; Equipment</h3>
+          <p>Generators, heavy equipment, and job-site vehicles that can't easily leave the site — we bring the fuel directly to the crew.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICE AREA -->
+<section id="area">
   <div class="inner">
     <span class="section-label">Service Coverage</span>
     <h2 class="section-title">Are You in Our Zone?</h2>
-    <p class="section-sub">Lake Sherwood is in our launch zone. We're also rolling out to Westlake Village, Thousand Oaks, and Newbury Park — check your zip below.</p>
+    <p class="section-sub">We're rolling out across Ventura County and the surrounding area — check your zip below to see if you're covered.</p>
     <div class="area-grid">
       <div>
         <div class="zip-checker">
@@ -536,6 +622,13 @@ footer p { font-size: 13px; color: rgba(255,255,255,0.3); }
             <span class="coverage-pill">Newbury Park</span>
             <span class="coverage-pill">Thousand Oaks</span>
             <span class="coverage-pill">Westlake Village</span>
+            <span class="coverage-pill">Camarillo</span>
+            <span class="coverage-pill">Moorpark</span>
+            <span class="coverage-pill">Simi Valley</span>
+            <span class="coverage-pill">Oxnard</span>
+            <span class="coverage-pill">Ventura</span>
+            <span class="coverage-pill">Agoura Hills</span>
+            <span class="coverage-pill">Calabasas</span>
           </div>
         </div>
       </div>
@@ -625,7 +718,7 @@ footer p { font-size: 13px; color: rgba(255,255,255,0.3); }
       </div>
       <div class="faq-item" onclick="toggleFAQ(this)">
         <div class="faq-q">Who is behind Fitzy? <span class="faq-icon">+</span></div>
-        <div class="faq-a">Fitzy is locally owned and operated, started right here in the 805. We're launching in Lake Sherwood first because it's home — we'd rather get it right for our neighbors before we expand.</div>
+        <div class="faq-a">Fitzy is locally owned and operated, started right here in the 805. We're proud to build this for the neighbors, businesses, and fleets in our own backyard.</div>
       </div>
     </div>
   </div>
@@ -637,7 +730,7 @@ footer p { font-size: 13px; color: rgba(255,255,255,0.3); }
     <div class="contact-left">
       <span class="section-label">Get in Touch</span>
       <h2>Questions?<br/><span>We've Got You.</span></h2>
-      <p>Locally owned &amp; operated. Whether you're a Lake Sherwood resident with a question, an HOA, or a fleet operator — drop us a line and we'll get back to you personally.</p>
+      <p>Locally owned &amp; operated. Whether you're a homeowner with a question, an HOA, or a fleet operator — drop us a line and we'll get back to you personally.</p>
       <div class="contact-item">
         <div class="contact-icon">
           <svg width="20" height="20" fill="none" viewBox="0 0 20 20">
@@ -679,7 +772,7 @@ footer p { font-size: 13px; color: rgba(255,255,255,0.3); }
 <footer>
   <img src="assets/fitzy-logo.png" alt="Fitzy Mobile Fueling"/>
   <p>© 2026 Fitzy Mobile Fueling. All rights reserved.<br/>Locally owned &amp; operated — Ventura County, CA.</p>
-  <p style="color:rgba(255,255,255,0.2);font-size:12px;">Launching Soon · Lake Sherwood</p>
+  <p style="color:rgba(255,255,255,0.2);font-size:12px;">Launching Soon · Ventura County</p>
 </footer>
 
 <script>
@@ -722,9 +815,6 @@ const IN_RANGE_ZIPS = new Set([
   '93015','93060',
 ]);
 
-// Lake Sherwood gets a warmer confirmation
-const LAKE_SHERWOOD_ZIPS = new Set(['91361','91362']);
-
 function checkZip() {
   const zip = document.getElementById('zipInput').value.trim();
   const result = document.getElementById('zipResult');
@@ -735,10 +825,7 @@ function checkZip() {
     return;
   }
   result.style.display = 'block';
-  if (LAKE_SHERWOOD_ZIPS.has(zip)) {
-    result.className = 'zip-result yes';
-    result.innerHTML = '✓ You\'re in. Lake Sherwood &amp; the 91361 area are part of our launch zone. <a href="#reserve" style="color:#4ade80;font-weight:700">Reserve your spot →</a>';
-  } else if (IN_RANGE_ZIPS.has(zip)) {
+  if (IN_RANGE_ZIPS.has(zip)) {
     result.className = 'zip-result yes';
     result.innerHTML = '✓ Great news — your zip is in our service area. <a href="#reserve" style="color:#4ade80;font-weight:700">Reserve your spot →</a>';
   } else {
@@ -747,7 +834,7 @@ function checkZip() {
   }
 }
 
-// Capture ?ref= from URL to track mailer source
+// Capture ?ref= from URL to track referral source
 (function captureRef() {
   const params = new URLSearchParams(window.location.search);
   const ref = params.get('ref');
@@ -764,15 +851,12 @@ document.getElementById('zipInput').addEventListener('keydown', e => {
 // Smooth nav shrink on scroll
 window.addEventListener('scroll', () => {
   const nav = document.querySelector('nav');
-  const ribbon = document.querySelector('.ls-ribbon');
   if (window.scrollY > 60) {
     nav.style.height = '60px';
     nav.querySelector('img').style.height = '40px';
-    if (ribbon) ribbon.style.top = '60px';
   } else {
     nav.style.height = '72px';
     nav.querySelector('img').style.height = '52px';
-    if (ribbon) ribbon.style.top = '72px';
   }
 });
 </script>
