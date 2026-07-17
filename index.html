@@ -379,6 +379,20 @@ section { padding: 96px 48px; }
   position: relative; background: #0A1525;
 }
 .map-wrap svg { width: 100%; height: 100%; }
+.radius-ping {
+  transform-box: fill-box;
+  transform-origin: 50% 50%;
+  animation: radiusPing 3.2s cubic-bezier(0.2, 0.65, 0.4, 1) infinite;
+}
+.radius-ping.ping-delay { animation-delay: 1.6s; }
+@keyframes radiusPing {
+  0%   { transform: scale(1); stroke-opacity: 0.5; }
+  70%  { stroke-opacity: 0.12; }
+  100% { transform: scale(1.16); stroke-opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .radius-ping { animation: none; opacity: 0; }
+}
 
 /* ── FAQ ── */
 #faq { background: linear-gradient(180deg, #060E1A 0%, var(--navy) 100%); }
@@ -717,8 +731,6 @@ footer p { font-size: 13px; color: rgba(255,255,255,0.3); }
             <span class="coverage-pill">Camarillo</span>
             <span class="coverage-pill">Moorpark</span>
             <span class="coverage-pill">Simi Valley</span>
-            <span class="coverage-pill">Oxnard</span>
-            <span class="coverage-pill">Ventura</span>
             <span class="coverage-pill">Agoura Hills</span>
             <span class="coverage-pill">Calabasas</span>
           </div>
@@ -749,8 +761,11 @@ footer p { font-size: 13px; color: rgba(255,255,255,0.3); }
             <line x1="0" y1="140" x2="500" y2="190"/>
             <line x1="100" y1="0" x2="400" y2="420"/>
           </g>
-          <!-- 30-mile service radius -->
+          <!-- service radius -->
           <circle cx="250" cy="210" r="140" fill="rgba(232,160,32,0.08)" stroke="rgba(232,160,32,0.4)" stroke-width="1.5" stroke-dasharray="6 4"/>
+          <!-- radiating glow rings -->
+          <circle class="radius-ping" cx="250" cy="210" r="140" fill="none" stroke="#E8A020" stroke-width="1.5"/>
+          <circle class="radius-ping ping-delay" cx="250" cy="210" r="140" fill="none" stroke="#E8A020" stroke-width="1.5"/>
           <!-- center point -->
           <circle cx="250" cy="210" r="10" fill="rgba(232,160,32,0.3)" stroke="#E8A020" stroke-width="2"/>
           <circle cx="250" cy="210" r="4" fill="#F5B942"/>
@@ -764,8 +779,6 @@ footer p { font-size: 13px; color: rgba(255,255,255,0.3); }
           <text x="250" y="228" fill="rgba(255,255,255,0.7)" font-size="12" text-anchor="middle" font-family="Barlow,sans-serif" font-weight="600">Newbury Park</text>
           <text x="293" y="172" fill="rgba(255,255,255,0.6)" font-size="11" text-anchor="middle" font-family="Barlow,sans-serif">Thousand Oaks</text>
           <text x="330" y="162" fill="rgba(255,255,255,0.6)" font-size="11" text-anchor="middle" font-family="Barlow,sans-serif">Westlake Village</text>
-          <!-- radius label -->
-          <text x="378" y="200" fill="rgba(232,160,32,0.6)" font-size="11" font-family="Barlow Condensed,sans-serif" font-weight="700" letter-spacing="1">30 MI RADIUS</text>
           <!-- legend -->
           <rect x="16" y="16" width="130" height="56" rx="8" fill="rgba(0,0,0,0.5)" stroke="rgba(255,255,255,0.08)"/>
           <circle cx="32" cy="36" r="5" fill="rgba(232,160,32,0.3)" stroke="#E8A020" stroke-width="1.5"/>
@@ -893,10 +906,6 @@ const IN_RANGE_ZIPS = new Set([
   '93021',
   // Simi Valley
   '93063','93065',
-  // Oxnard
-  '93030','93033','93035','93036',
-  // Ventura
-  '93001','93003','93004',
   // Westlake Village / Agoura Hills / Oak Park
   '91361','91377','91301','91302','91376',
   // Calabasas / Hidden Hills
