@@ -167,6 +167,51 @@ section { padding: 96px 48px; }
 .section-sub { font-size: 16px; color: rgba(255,255,255,0.55); max-width: 520px; line-height: 1.6; margin-bottom: 56px; }
 .inner { max-width: 1200px; margin: 0 auto; }
 
+/* ── Pricing / value ── */
+#pricing {
+  background: linear-gradient(180deg, #0D1F38 0%, var(--navy) 100%);
+  position: relative;
+}
+.pricing-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; align-items: stretch; }
+.pricing-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 20px; padding: 36px 36px 32px;
+  position: relative;
+}
+.pricing-card.accent { border-color: rgba(232,160,32,0.35); background: rgba(232,160,32,0.06); }
+.pricing-eyebrow {
+  font-family: 'Barlow Condensed', sans-serif; font-weight: 800;
+  font-size: 13px; letter-spacing: 3px; text-transform: uppercase;
+  color: var(--amber); margin-bottom: 14px;
+}
+.pricing-card h3 {
+  font-family: 'Barlow Condensed', sans-serif; font-weight: 800;
+  font-size: 28px; line-height: 1.1; letter-spacing: 0.3px;
+  text-transform: uppercase; color: var(--white); margin-bottom: 14px;
+}
+.pricing-card p { font-size: 15px; line-height: 1.7; color: rgba(255,255,255,0.6); }
+.pricing-join {
+  display: flex; align-items: center; justify-content: center; gap: 16px;
+  margin: 8px 0 40px;
+}
+.pricing-join .line { flex: 1; height: 1px; background: rgba(255,255,255,0.1); }
+.pricing-join .mark {
+  font-family: 'Barlow Condensed', sans-serif; font-weight: 800;
+  font-size: 20px; color: var(--amber); letter-spacing: 1px;
+  border: 1.5px solid rgba(232,160,32,0.4); border-radius: 50%;
+  width: 44px; height: 44px; display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.pricing-cta { text-align: center; margin-top: 40px; }
+.pricing-cta p { font-size: 17px; color: rgba(255,255,255,0.75); margin-bottom: 20px; }
+.pricing-cta p b { color: var(--white); }
+@media (max-width: 768px) {
+  .pricing-grid { grid-template-columns: 1fr; }
+  .pricing-join { flex-direction: column; height: auto; margin: 0; }
+  .pricing-join .line { width: 1px; height: 24px; flex: none; }
+}
+
 /* ── Why Fitzy (benefits) ── */
 #why {
   background: #F5F3EE; color: #2C2C2A; padding: 96px 48px;
@@ -462,6 +507,38 @@ footer p { font-size: 13px; color: rgba(255,255,255,0.3); }
         <p>We'll reach out as soon as Fitzy Mobile Fueling launches in your area.</p>
       </div>
       <p class="form-note">No spam. No commitment. Cancel anytime.</p>
+    </div>
+  </div>
+</section>
+
+<div class="amber-line"></div>
+
+<!-- PRICING / VALUE -->
+<section id="pricing">
+  <div class="inner">
+    <span class="section-label">Let's Talk Cost</span>
+    <h2 class="section-title">Cheaper Than You're Expecting</h2>
+    <p class="section-sub">"We bring the gas to your driveway" sounds like it should cost a fortune. It doesn't — and the gap that's left over isn't close to what your time is worth.</p>
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <div class="pricing-eyebrow">The Price Gap Is Small</div>
+        <h3>Not a Markup That Makes You Flinch</h3>
+        <p>Fuel is priced at market rate, plus a modest convenience fee for the delivery. Most people expect it to cost a lot more than it does — the honest answer is it's close to what you'd pay pumping it yourself.</p>
+      </div>
+      <div class="pricing-card accent">
+        <div class="pricing-eyebrow">The Time Payback Isn't</div>
+        <h3>15 Minutes, Twice A Week, All Year</h3>
+        <p>That's over 25 hours a year spent standing at a pump. If your time is worth anything to you — and it is — trading a few dollars for a full tank and zero trip is an easy call.</p>
+      </div>
+    </div>
+    <div class="pricing-join">
+      <div class="line"></div>
+      <div class="mark">≈</div>
+      <div class="line"></div>
+    </div>
+    <div class="pricing-cta">
+      <p>Small price gap. <b>Big time win.</b> That's the whole pitch.</p>
+      <a href="#reserve" class="nav-cta">Reserve Your Spot</a>
     </div>
   </div>
 </section>
